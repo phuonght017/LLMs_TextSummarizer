@@ -57,6 +57,36 @@ def summarize(url):
     return response.choices[0].message.content
 ```
 
+## Extended Features
+
+### 1. Summarization with Ollama
+This version of the summarization program replaces the OpenAI API with [Ollama](https://ollama.com/), an open-source alternative for running LLMs locally. It allows users to summarize text without external API calls, making it more cost-effective and private.
+
+**Features:**
+- Uses an on-device LLM through Ollama
+- Summarizes large text inputs efficiently
+- No API key required, runs entirely offline
+
+**Requirements:**
+- Install Ollama: Follow the instructions at [Ollama's official site](https://ollama.com/)
+- Ensure the required model is downloaded
+
+---
+
+### 2. PowerPoint Slides Summarization
+This feature enables users to summarize `.pptx` presentations using `python-pptx`. It extracts text from slides and generates a summary based on the extracted content.
+
+**Features:**
+- Parses `.pptx` files to extract text from slides
+- Summarizes the extracted text using an LLM
+- Supports batch processing of multiple slides
+
+**Requirements:**
+- Install dependencies:
+  ```bash
+  pip install python-pptx
+  ```
+
 ## 📌 Notes
 - Ensure your OpenAI API key is set in `.env` or as an environment variable.
 - If crawling fails, check ChromeDriver installation and permissions.

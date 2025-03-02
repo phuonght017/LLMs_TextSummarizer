@@ -57,7 +57,7 @@ def summarize(url):
     return response.choices[0].message.content
 ```
 
-## Extended Features
+## 🌟 Extended Features
 
 ### 1. Summarization with Ollama
 This version of the summarization program replaces the OpenAI API with [Ollama](https://ollama.com/), an open-source alternative for running LLMs locally. It allows users to summarize text without external API calls, making it more cost-effective and private.

@@ -94,15 +94,15 @@ This feature enables users to summarize `.pptx` presentations using `python-pptx
       - For prospective clients
       - For investors
       - For recruitment
-
 - Input: Company name, URL to the main website of the company
 - Output: Markdown file and image of brochure which contains content from the website and related refered links
-- 
+  
 ### Technology:
 - Use OpenAI API
 - Apply one-shot prompting to figure out which links are related (eg. About page, Career page, ...)
 - Use `requests` and `BeautifulSoup` to extract contents from these links
 - Call API to use model GPT-4o-mini to summary content and generate a brochure
+- Use Gradio to create UI
 
 ## 📌 Notes
 - Ensure your OpenAI API key is set in `.env` or as an environment variable.

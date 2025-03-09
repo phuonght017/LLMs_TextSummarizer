@@ -57,6 +57,53 @@ def summarize(url):
     return response.choices[0].message.content
 ```
 
+## 🌟 Extended Features
+
+### 1. Summarization with Ollama
+This version of the summarization program replaces the OpenAI API with [Ollama](https://ollama.com/), an open-source alternative for running LLMs locally. It allows users to summarize text without external API calls, making it more cost-effective and private.
+
+**Features:**
+- Uses an on-device LLM through Ollama
+- Summarizes large text inputs efficiently
+- No API key required, runs entirely offline
+
+**Requirements:**
+- Install Ollama: Follow the instructions at [Ollama's official site](https://ollama.com/)
+- Ensure the required model is downloaded
+
+---
+
+### 2. PowerPoint Slides Summarization
+This feature enables users to summarize `.pptx` presentations using `python-pptx`. It extracts text from slides and generates a summary based on the extracted content.
+
+**Features:**
+- Parses `.pptx` files to extract text from slides
+- Summarizes the extracted text using an LLM
+- Supports batch processing of multiple slides
+
+**Requirements:**
+- Install dependencies:
+  ```bash
+  pip install python-pptx
+  ```
+
+## 🔖 Marketing Brochure Generator
+
+### Objectives:
+- Create a product that can generate marketing brochures about a company:
+      - For prospective clients
+      - For investors
+      - For recruitment
+- Input: Company name, URL to the main website of the company
+- Output: Markdown file and image of brochure which contains content from the website and related refered links
+  
+### Technology:
+- Use OpenAI API
+- Apply one-shot prompting to figure out which links are related (eg. About page, Career page, ...)
+- Use `requests` and `BeautifulSoup` to extract contents from these links
+- Call API to use model GPT-4o-mini to summary content and generate a brochure
+- Use Gradio to create UI
+
 ## 📌 Notes
 - Ensure your OpenAI API key is set in `.env` or as an environment variable.
 - If crawling fails, check ChromeDriver installation and permissions.
